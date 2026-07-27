@@ -1,0 +1,1377 @@
+<!DOCTYPE html> 
+
+<html lang="en"> 
+
+<head> 
+
+  <meta charset="UTF-8" /> 
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+
+  <title>Hot Beans Web | Junior Developer Careers</title> 
+
+  <style> 
+
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #000000; background: lightblue; } 
+
+    a { color: #2F4F4F; } 
+
+    h1, h2, h3 { margin: 0 0 12px; } 
+
+    p { margin: 0 0 12px; color: rgb(0, 0, 0); line-height: 1.6; } 
+
+    ul { margin: 8px 0 12px 20px; color: gray; line-height: 1.7; } 
+
+    img { max-width: 100%; display: block; } 
+
+ 
+
+    /* Layout */ 
+
+    .container { max-width: 960px; margin: 0 auto; padding: 0 16px; } 
+
+    section { padding: 48px 0; border-top: 1px solid #ddd; } 
+
+ 
+
+    
+
+    /* Nav */ 
+
+    nav { background: white; padding: 12px 0; } 
+
+    nav .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; } 
+
+    nav .logo { font-size: 1.2rem; font-weight: bold; color: black; text-decoration: none; } 
+
+    nav .logo span { color: black; } 
+
+    nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px; } 
+
+    nav ul a { color: rgba(0, 0, 0, 0.85); text-decoration: none; padding: 6px 10px; font-size: 0.9rem; } 
+
+    nav ul a:hover { color: rebeccapurple; } 
+
+ 
+
+    /* Hero */ 
+
+    #home { background: darkgrey; color: black; border-top: none; } 
+
+    #home h1 { color: black; font-size: 2rem; } 
+
+    #home p { color: rgba(255,255,255,0.8); } 
+
+    .hero-inner { display: flex; gap: 32px; align-items: flex-start; flex-wrap: wrap; padding: 48px 0; } 
+
+    .hero-text { flex: 1; min-width: 260px; } 
+
+    .hero-img { flex: 0 0 260px; } 
+
+    .hero-img img { border-radius: 8px; height: 280px; object-fit: cover; width: 100%; } 
+
+    .hero-stats { display: flex; gap: 32px; margin-top: 28px; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px; } 
+
+    .hero-stats div strong { display: block; font-size: 1.5rem; color: white; } 
+
+    .hero-stats div span { font-size: 0.8rem; color: rgba(255,255,255,0.6); } 
+
+    .btn { display: inline-block; padding: 10px 22px; background: lightskyblue; color: white; text-decoration: none; border-radius: 6px; font-size: 0.95rem; margin-top: 16px; } 
+
+    .btn:hover { background: navy; } 
+
+ 
+
+    /* About */ 
+
+    .about-inner { display: flex; gap: 32px; align-items: flex-start; flex-wrap: wrap; } 
+
+    .about-img { flex: 0 0 300px; } 
+
+    .about-img img { border-radius: 8px; width: 100%; } 
+
+    .about-text { flex: 1; min-width: 240px; } 
+
+    .pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; } 
+
+    .pill { background: lightskyblue; border-radius: 4px; padding: 5px 12px; font-size: 0.85rem; color: navy; } 
+
+ 
+
+    /* Team */ 
+
+    #team { background: darkgrey; } 
+
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; margin-top: 24px; } 
+
+    .team-card { background: lightskyblue; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; } 
+
+    .team-card img { width: 100%; height: 200px; object-fit: cover; object-position: top center; } 
+
+    .team-card-body { padding: 14px; } 
+
+    .team-card-body h3 { font-size: 1rem; margin-bottom: 4px; } 
+
+    .team-card-body .role { color: white; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; margin-bottom: 8px; } 
+
+    .team-card-body p { font-size: 0.875rem; } 
+
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; } 
+
+    .skill-tag { background: white 
+
+  ; border-radius: 4px; padding: 2px 8px; font-size: 0.75rem; color: black; } 
+
+ 
+
+    /* Vacancies */ 
+
+    .vac-list { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; } 
+
+    .vac-card { border: 1px solid #ccc; border-radius: 8px; padding: 20px; background: white; } 
+
+    .vac-card h3 { margin-bottom: 4px; } 
+
+    .vac-meta { font-size: 0.85rem; color: black; margin-bottom: 10px; } 
+
+    .vac-meta span { margin-right: 14px; } 
+
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 4px; font-size: 0.78rem; font-weight: bold; } 
+
+    .badge-open { background: #d4edda; color: #155724; } 
+
+    .badge-soon { background: #fff3cd; color: #856404; } 
+
+    .vac-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; } 
+
+ 
+
+    /* Application */ 
+
+    #application { background: darkgrey; } 
+
+    .tabs { display: flex; gap: 6px; margin-bottom: 20px; flex-wrap: wrap; } 
+
+    .tab-btn { padding: 8px 18px; border: 1px solid #ccc; background: white; border-radius: 4px; cursor: pointer; font-size: 0.9rem; } 
+
+    .tab-btn.active { background: white; color: black; border-color: black; } 
+
+    .tab-panel { display: none; } 
+
+    .tab-panel.active { display: block; } 
+
+    .info-box { background: white; border: 1px solid #ccc; border-radius: 8px; padding: 24px; } 
+
+    .info-box h3 { margin-bottom: 12px; } 
+
+    .req-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; } 
+
+    .req-list li { color: black; font-size: 0.9rem; } 
+
+    @media (max-width: 520px) { .req-list { grid-template-columns: 1fr; } } 
+
+ 
+
+    /* Form */ 
+
+    .form-box { background: darkgrey; border: 1px solid #ccc; border-radius: 8px; padding: 24px; } 
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; } 
+
+    @media (max-width: 520px) { .form-row { grid-template-columns: 1fr; } } 
+
+    .form-group { display: flex; flex-direction: column; gap: 4px; margin-bottom: 14px; } 
+
+    .form-group label { font-size: 0.85rem; font-weight: bold; color: black; } 
+
+    .form-group input, .form-group select, .form-group textarea { padding: 9px 12px; border: 1px solid #ccc; border-radius: 4px; font-family: Arial, sans-serif; font-size: 0.95rem; } 
+
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: navy; outline: none; } 
+
+    .form-group textarea { min-height: 110px; resize: vertical; } 
+
+    .form-group .err { color: #c0392b; font-size: 0.78rem; display: none; } 
+
+    .form-group.has-error input, .form-group.has-error select, .form-group.has-error textarea { border-color: #c0392b; } 
+
+    .form-group.has-error .err { display: block; } 
+
+    .form-success { display: none; background: #d4edda; border: 1px solid #c3e6cb; border-radius: 4px; padding: 14px; color: #155724; font-weight: bold; margin-top: 14px; } 
+
+    button.btn { border: none; cursor: pointer; font-size: 0.95rem; } 
+
+ 
+
+    /* Courses */ 
+
+    .course-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin: 16px 0 32px; } 
+
+    .course-card { border: 1px solid #ccc; border-radius: 8px; overflow: hidden; } 
+
+    .course-head { background: black; color: white; padding: 16px; } 
+
+    .course-head.alt { background: navy; } 
+
+    .course-head h3 { color: white; font-size: 0.95rem; margin-bottom: 4px; } 
+
+    .course-head p  { color: rgba(255,255,255,0.75); font-size: 0.8rem; margin: 0; } 
+
+    .course-body { padding: 14px; font-size: 0.85rem; } 
+
+    .course-body .meta { color: gray; font-size: 0.78rem; margin-bottom: 8px; } 
+
+    .course-body p { font-size: 0.85rem; margin-bottom: 10px; } 
+
+    .sub-title { font-weight: bold; font-size: 1rem; margin: 0 0 12px; color: navy; } 
+
+ 
+
+    /* Contact */ 
+
+    #contact { background: white; } 
+
+    .contact-inner { display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start; } 
+
+    .contact-info { flex: 0 0 260px; } 
+
+    .contact-info h3 { margin-bottom: 16px; } 
+
+    .cinfo { margin-bottom: 16px; } 
+
+    .cinfo h4 { margin: 0 0 4px; font-size: 0.9rem; } 
+
+    .cinfo p { font-size: 0.875rem; margin: 0; } 
+
+    .map-wrap { border: 1px solid #ccc; border-radius: 6px; overflow: hidden; margin-top: 20px; line-height: 0; } 
+
+    .contact-form { flex: 1; min-width: 260px; } 
+
+ 
+
+    /* Footer */ 
+
+    footer { background: black; color: rgba(255,255,255,0.65); padding: 32px 0; } 
+
+    footer .footer-inner { display: flex; gap: 32px; flex-wrap: wrap; margin-bottom: 24px; } 
+
+    footer .footer-col { flex: 1; min-width: 160px; } 
+
+    footer h4 { color: rgba(255,255,255,0.45); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; } 
+
+    footer ul { list-style: none; margin: 0; padding: 0; } 
+
+    footer ul li { margin-bottom: 8px; } 
+
+    footer ul a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.875rem; } 
+
+    footer ul a:hover { color: red; } 
+
+    footer p { color: rgba(255,255,255,0.5); font-size: 0.82rem; margin: 0; } 
+
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; } 
+
+  </style> 
+
+</head> 
+
+<body> 
+
+ 
+
+  <!-- NAV --> 
+
+  <nav> 
+
+    <div class="container"> 
+
+      <a href="#home" class="logo">Hot <span>Beans</span> Web</a> 
+
+      <ul> 
+
+        <li><a href="#home">Home</a></li> 
+
+        <li><a href="#about">About</a></li> 
+
+        <li><a href="#team">The Team</a></li> 
+
+        <li><a href="#vacancies">Vacancies</a></li> 
+
+        <li><a href="#application">Apply</a></li> 
+
+        <li><a href="#courses">Courses</a></li> 
+
+        <li><a href="#contact">Contact</a></li> 
+
+      </ul> 
+
+    </div> 
+
+  </nav> 
+
+ 
+
+  <!-- HERO --> 
+
+  <section id="home"> 
+
+    <div class="container"> 
+
+      <div class="hero-inner"> 
+
+        <div class="hero-text"> 
+
+          <h1>Where Junior Developers Become Experts</h1> 
+
+          <p>Hot Beans Web is an award-winning agency based in Nottingham. We actively recruit junior developers fresh from training and nurture them into outstanding professionals.</p> 
+
+          <a href="#vacancies" class="btn">View Vacancies →</a> 
+
+          <div class="hero-stats"> 
+
+            <div><strong>100+</strong><span>Associates</span></div> 
+
+            <div><strong>2014</strong><span>Founded</span></div> 
+
+            <div><strong>Award</strong><span>Winning Agency</span></div> 
+
+          </div> 
+
+        </div> 
+
+        <div class="hero-img"> 
+
+          <img src="https://as2.ftcdn.net/v2/jpg/01/93/30/07/1000_F_193300792_KBSCpjjCvhp3RR0bvgFYWkbf1I5HTOad.jpg" alt="Hot Beans Web staff" /> 
+
+        </div> 
+
+      </div> 
+
+    </div> 
+
+  </section> 
+
+ 
+
+  <!-- ABOUT --> 
+
+  <section id="about"> 
+
+    <div class="container"> 
+
+      <h2>About Us</h2> 
+
+      <div class="about-inner"> 
+
+        <div class="about-img"> 
+
+          <img src="https://startnearshoring.com/wp-content/uploads/2023/07/Dedicated_IT_Teams.jpg" alt="Hot Beans Web team working" /> 
+
+        </div> 
+
+        <div class="about-text"> 
+
+          <h3>Building Tomorrow's Web, Today</h3> 
+
+          <p>Hot Beans Web was formed in 2014 by brothers Mark and Stewart from the modest surroundings of their West Bridgford family home. After graduating in Computer Science from Leicester University in 2013, the brothers began building websites for family and friends — and quickly grew from there.</p> 
+
+          <p>Now based in a modern office in the centre of Nottingham, the company has grown to more than 100 associates. Our mission is to provide a collaborative and exciting workplace that allows our developers to shine.</p> 
+
+          <p>We are an award-winning web design agency working with some of the best small-to-medium businesses in the Midlands.</p> 
+
+          <div class="pills"> 
+
+            <span class="pill">Award Winning</span> 
+
+            <span class="pill">Mentorship Culture</span> 
+
+            <span class="pill">Junior-Friendly</span> 
+
+            <span class="pill">Remote &amp; Flexible</span> 
+
+          </div> 
+
+        </div> 
+
+      </div> 
+
+    </div> 
+
+  </section> 
+
+ 
+
+  <!-- TEAM --> 
+
+  <section id="team"> 
+
+    <div class="container"> 
+
+      <h2>The Team</h2> 
+
+      <p>Every one of these developers joined Hot Beans Web as a trainee.</p> 
+
+      <div class="team-grid"> 
+
+ 
+
+        <div class="team-card"> 
+
+          <img src="https://static9.depositphotos.com/1550494/1164/i/450/depositphotos_11644823-stock-photo-cool-black-american-man-in.jpg" alt="Mike Smith" loading="lazy" /> 
+
+          <div class="team-card-body"> 
+
+            <h3>Mike Smith</h3> 
+
+            <div class="role">Senior Ux Developer · Joined 2015</div> 
+
+            <p>Mike graduated with a Computing (Web Development) BSc Hons at the University of Wales. His skills in HTML, CSS, and JavaScript helped him quickly become lead developer in 2021.</p> 
+
+            <div class="skill-tags"><span class="skill-tag">HTML/CSS</span><span class="skill-tag">JavaScript</span><span class="skill-tag">Lead Dev</span></div> 
+
+          </div> 
+
+        </div> 
+
+ 
+
+        <div class="team-card"> 
+
+          <img src="https://m.media-amazon.com/images/M/MV5BNjEwNGI4YTItYjRkNC00ZjMyLWI2MGYtYTRmNDU5MjFiMjdlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Eldric Barnes" loading="lazy" /> 
+
+          <div class="team-card-body"> 
+
+            <h3>Eldric Barnes</h3> 
+
+            <div class="role">Ui Developer · Joined 2020</div> 
+
+            <p>Eldric achieved a BSc Hons in Computing from the University of Manchester. She has worked on several big projects including Umbro and 3M, and was promoted to developer in 2021.</p> 
+
+            <div class="skill-tags"><span class="skill-tag">UI/UX</span><span class="skill-tag">Responsive Design</span><span class="skill-tag">CSS</span></div> 
+
+          </div> 
+
+        </div> 
+
+ 
+
+        <div class="team-card"> 
+
+          <img src="https://img.magnific.com/premium-photo/smiling-young-man-mexican-descent-dressed-suit_731930-180516.jpg" alt="Jeremiah  Costly" loading="lazy" /> 
+
+          <div class="team-card-body"> 
+
+            <h3>Jeremiah Costly</h3> 
+
+            <div class="role">Backend Developer · Joined 2021</div> 
+
+            <p>Jeremiah completed an online Diploma in Manchester from the University of Manchester — while working full time. His industry experience gives him a great understanding of clients' needs.</p> 
+
+            <div class="skill-tags"><span class="skill-tag">University of Manchester</span><span class="skill-tag">Career Changer</span><span class="skill-tag">Full Stack</span></div> 
+
+          </div> 
+
+        </div> 
+
+ 
+
+        <div class="team-card"> 
+
+          <img src="https://content.moss.co.uk/images/extraextralarge/966323515_09.jpg" alt="Von Goofie" loading="lazy" /> 
+
+          <div class="team-card-body"> 
+
+            <h3>Von Goofie</h3> 
+
+            <div class="role">Frontend Developer · Joined 2022</div> 
+
+            <p>Von holds a BSc Hons in We developing from the University of Manchester With a passion for graphic design, she's the go-to person on any creative project.</p> 
+
+            <div class="skill-tags"><span class="skill-tag">Graphic Design</span><span class="skill-tag">Web Design</span><span class="skill-tag">Front-End</span></div> 
+
+          </div> 
+
+        </div> 
+
+ 
+
+        <div class="team-card"> 
+
+          <img src="https://tse2.mm.bing.net/th/id/OIP.M4J4id0EtXnYVgtaqPYgWgAAAA?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Vincent Brown" loading="lazy" /> 
+
+          <div class="team-card-body"> 
+
+            <h3>Vincent Brown</h3> 
+
+            <div class="role">WordPress Developer · Joined 2021</div> 
+
+            <p>Vicent joined with an HND in Computing from Manchester College and is now studying part time for a degree. His ability to solve complex problems has made him a valued team member.</p> 
+
+            <div class="skill-tags"><span class="skill-tag">HND Computing</span><span class="skill-tag">Problem Solving</span></div> 
+
+          </div> 
+
+        </div> 
+
+ 
+
+        <div class="team-card"> 
+
+          <img src="https://img.freepik.com/premium-photo/man-suit-with-tie-that-says-hes-wearing-shirt_246892-1296.jpg" alt="James Brown" loading="lazy" /> 
+
+          <div class="team-card-body"> 
+
+            <h3>James Brown</h3> 
+
+            <div class="role">Trainee Wordpress Developer · Joined 2025</div> 
+
+            <p>James joined as a trainee in Wordpress after work experience with us. He is currently undertaking a number of online courses in programming.</p> 
+
+            <div class="skill-tags"><span class="skill-tag">HND Computing</span><span class="skill-tag">Online Courses</span><span class="skill-tag">Trainee</span></div> 
+
+          </div> 
+
+        </div> 
+
+ 
+
+      </div> 
+
+    </div> 
+
+  </section> 
+
+ 
+
+  <!-- VACANCIES --> 
+
+  <section id="vacancies"> 
+
+    <div class="container"> 
+
+      <h2>Vacancies</h2> 
+
+      <p>We want high performers who thrive in a fast-moving environment — people who lead by example and build strong relationships. <a href="#application">Apply now →</a></p> 
+
+ 
+
+      <div class="vac-list"> 
+
+ 
+
+        <div class="vac-card"> 
+
+          <div class="vac-top"> 
+
+            <h3>Senior UX Developer</h3> 
+
+            <span class="badge badge-open">Open</span> 
+
+          </div> 
+
+          <div class="vac-meta"> 
+
+            <span>Nottingham / Remote</span> 
+
+            <span>Full-Time</span> 
+
+            <span>£78,965– £96,876</span> 
+
+          </div> 
+
+          <ul> 
+
+            <li>Build responsive, accessible web interfaces</li> 
+
+            <li>Collaborate with designers and back-end developers</li> 
+
+            <li>Write clean, well-documented HTML, CSS &amp; JavaScript</li> 
+
+            <li>Participate in code reviews and agile standups</li> 
+
+          </ul> 
+
+        </div> 
+
+ 
+
+        <div class="vac-card"> 
+
+          <div class="vac-top"> 
+
+            <h3>Ui Developer</h3> 
+
+            <span class="badge badge-open">Open</span> 
+
+          </div> 
+
+          <div class="vac-meta"> 
+
+            <span>Nottingham / Hybrid</span> 
+
+            <span>Full-Time</span> 
+
+            <span>£67,987 – £79,765</span> 
+
+          </div> 
+
+          <ul> 
+
+            <li>Develop and maintain web applications end-to-end</li> 
+
+            <li>Work with RESTful APIs and database systems</li> 
+
+            <li>Implement features from technical specifications</li> 
+
+            <li>Assist in system architecture discussions</li> 
+
+          </ul> 
+
+        </div> 
+
+ 
+
+        <div class="vac-card"> 
+
+          <div class="vac-top"> 
+
+            <h3>Backend Developer</h3> 
+
+            <span class="badge badge-soon">Closing Soon</span> 
+
+          </div> 
+
+          <div class="vac-meta"> 
+
+            <span>Nottingham</span> 
+
+            <span>Full-Time</span> 
+
+            <span>£47,987 – £55,987</span> 
+
+          </div> 
+
+          <ul> 
+
+            <li>Design and implement APIs and server-side logic</li> 
+
+            <li>Manage database schemas and queries</li> 
+
+            <li>Ensure application performance and security</li> 
+
+            <li>Write unit and integration tests</li> 
+
+          </ul> 
+
+        </div> 
+
+ 
+
+        <div class="vac-card"> 
+
+          <div class="vac-top"> 
+
+            <h3>Junior WordPress Developer</h3> 
+
+            <span class="badge badge-open">Closing Soon</span> 
+
+          </div> 
+
+          <div class="vac-meta"> 
+
+            <span>Remote</span> 
+
+            <span>Full / Part-Time</span> 
+
+            <span>£25,987 – £34,987</span> 
+
+          </div> 
+
+          <ul> 
+
+            <li>Build and customise WordPress themes and plugins</li> 
+
+            <li>Maintain and update existing client websites</li> 
+
+            <li>Optimise sites for performance and SEO</li> 
+
+            <li>Provide ongoing client support</li> 
+
+          </ul> 
+
+        </div> 
+
+ 
+
+      </div> 
+
+    </div> 
+
+  </section> 
+
+ 
+
+  <!-- APPLICATION --> 
+
+  <section id="application"> 
+
+    <div class="container"> 
+
+      <h2>Apply</h2> 
+
+      <p>Review the role information below, then apply using the form. We read every application and respond within 5 working days.</p> 
+
+ 
+
+      <div class="tabs"> 
+
+        <button class="tab-btn active" data-tab="jobdesc">Job Description</button> 
+
+        <button class="tab-btn" data-tab="skills">Required Skills</button> 
+
+        <button class="tab-btn" data-tab="quals">Qualifications</button> 
+
+        <button class="tab-btn" data-tab="applyform">Apply Now</button> 
+
+      </div> 
+
+ 
+
+      <!-- Job Description --> 
+
+      <div class="tab-panel active" id="tab-jobdesc"> 
+
+        <div class="info-box"> 
+
+          <h3>Junior Web Developer — Job Description</h3> 
+
+          <p>Junior web developers at Hot Beans Web assist the team in all aspects of website and application design. From day one you'll work on real client projects guided by a senior mentor.</p> 
+
+          <ul class="req-list"> 
+
+            <li>Assisting with the plan and design process of a website</li> 
+
+            <li>Assisting with the build and structure of a website</li> 
+
+            <li>Writing and editing website content</li> 
+
+            <li>Writing code in one or more programming or scripting languages</li> 
+
+            <li>Implementing new design features and converting files to web formats</li> 
+
+            <li>Assisting with testing and reviewing front and back-end applications</li> 
+
+            <li>Maintaining webpages and performing updates</li> 
+
+            <li>Keeping up to date with latest technology and programming trends</li> 
+
+          </ul> 
+
+        </div> 
+
+      </div> 
+
+ 
+
+      <!-- Skills --> 
+
+      <div class="tab-panel" id="tab-skills"> 
+
+        <div class="info-box"> 
+
+          <h3>Skills Required</h3> 
+
+          <p>A solid understanding of website design and development principles is essential.</p> 
+
+          <ul> 
+
+            <li>Proficient in HTML and CSS; good JavaScript knowledge</li> 
+
+            <li>Competent in functional and unit-level testing</li> 
+
+            <li>Excellent design skills with attention to detail</li> 
+
+            <li>Understanding of responsive design principles</li> 
+
+            <li>Knowledge of back-end: servers, APIs, SQL, databases</li> 
+
+            <li>Understanding of Search Engine Optimisation</li> 
+
+            <li>Strong analytical and communication skills</li> 
+
+            <li>Ability to work under pressure to tight deadlines</li> 
+
+          </ul> 
+
+        </div> 
+
+      </div> 
+
+ 
+
+      <!-- Qualifications --> 
+
+      <div class="tab-panel" id="tab-quals"> 
+
+        <div class="info-box"> 
+
+          <h3>Qualifications &amp; Work Experience</h3> 
+
+          <p>A level 5 (HND) or level 6 (Degree) qualification in Web Development or a related field is essential. Any other relevant courses, certification or experience is desirable.</p> 
+
+          <p><strong>Accepted Qualifications:</strong></p> 
+
+          <ul> 
+
+            <li>Degree in Computer Science or Web Development (BSc Hons)</li> 
+
+            <li>HND / HNC in IT or Computing (Level 5)</li> 
+
+            <li>Recognised coding bootcamp completion</li> 
+
+            <li>Open University Diploma in Computing, IT and Design</li> 
+
+          </ul> 
+
+          <p><strong>Experience:</strong></p> 
+
+          <ul> 
+
+            <li>3-4 years professional or personal development experience</li> 
+
+            <li>Portfolio of personal or academic projects</li> 
+
+            <li>Open source contributions</li> 
+
+            <li>Any freelance or voluntary web work</li> 
+
+          </ul> 
+
+          <p><em>Career changers are very welcome! Like Steve Billings, who completed his qualification while working full time.</em></p> 
+
+        </div> 
+
+      </div> 
+
+ 
+
+      <!-- Apply Form --> 
+
+      <div class="tab-panel" id="tab-applyform"> 
+
+        <div class="form-box"> 
+
+          <h3>Apply Online</h3> 
+
+          <p>Fill in all required fields. We'll be in touch within 5 working days.</p> 
+
+          <form id="appForm" novalidate> 
+
+            <div class="form-row"> 
+
+              <div class="form-group" id="fg-fn"> 
+
+                <label for="fn">First Name *</label> 
+
+                <input type="text" id="fn" name="fn" placeholder="Jane" required /> 
+
+                <span class="err">Please enter your first name.</span> 
+
+              </div> 
+
+              <div class="form-group" id="fg-ln"> 
+
+                <label for="ln">Last Name *</label> 
+
+                <input type="text" id="ln" name="ln" placeholder="Smith" required /> 
+
+                <span class="err">Please enter your last name.</span> 
+
+              </div> 
+
+              <div class="form-group" id="fg-em"> 
+
+                <label for="em">Email Address *</label> 
+
+                <input type="email" id="em" name="em" placeholder="jane@example.com" required /> 
+
+                <span class="err">Please enter a valid email address.</span> 
+
+              </div> 
+
+              <div class="form-group"> 
+
+                <label for="ph">Phone Number</label> 
+
+                <input type="tel" id="ph" name="ph" placeholder="+44 7700 900000" /> 
+
+              </div> 
+
+            </div> 
+
+            <div class="form-group" id="fg-role"> 
+
+              <label for="role">Role Applying For *</label> 
+
+              <select id="role" name="role" required> 
+
+                <option value="">Select a vacancy…</option> 
+
+                <option value="frontend">Junior Front-End Developer</option> 
+
+                <option value="fullstack">Junior Full-Stack Developer</option> 
+
+                <option value="backend">Junior Back-End Developer</option> 
+
+                <option value="wordpress">Junior WordPress Developer</option> 
+
+              </select> 
+
+              <span class="err">Please select the role you're applying for.</span> 
+
+            </div> 
+
+            <div class="form-group"> 
+
+              <label for="port">Portfolio / GitHub URL</label> 
+
+              <input type="url" id="port" name="port" placeholder="https://github.com/yourname" /> 
+
+            </div> 
+
+            <div class="form-group" id="fg-cl"> 
+
+              <label for="cl">Cover Letter / Why Hot Beans? *</label> 
+
+              <textarea id="cl" name="cl" placeholder="Tell us about yourself, your experience, and why you want to join Hot Beans Web…" required></textarea> 
+
+              <span class="err">Please write a short cover letter (min 50 characters).</span> 
+
+            </div> 
+
+            <button type="submit" class="btn">Submit Application →</button> 
+
+            <div class="form-success" id="appSuccess">Application received! We'll review it and be in touch within 5 working days.</div> 
+
+          </form> 
+
+        </div> 
+
+      </div> 
+
+ 
+
+    </div> 
+
+  </section> 
+
+ 
+
+  <!-- COURSES --> 
+
+  <section id="courses"> 
+
+    <div class="container"> 
+
+      <h2>Recommended Courses &amp; Qualifications</h2> 
+
+      <p>Don't yet have the relevant qualifications? Here are the universities and courses we recommend to help you get ready for a role at Hot Beans Web.</p> 
+
+ 
+
+      <div class="sub-title" style="margin-top:24px;">Degrees &amp; HNDs</div> 
+
+      <div class="course-grid"> 
+
+        <div class="course-card"> 
+
+          <div class="course-head"><h3>BSc Computer Science</h3><p>University of Oxford</p></div> 
+
+          <div class="course-body"><div class="meta">3 Years · BSc Hons</div><p>Rigorous computing degree with strong programming foundations and optional placement year.</p><a href="https://www.ox.ac.uk/" target="_blank" rel="noopener">Visit Site →</a></div> 
+
+        </div> 
+
+        <div class="course-card"> 
+
+          <div class="course-head"><h3>BSc Computer Science</h3><p>University of Leeds</p></div> 
+
+          <div class="course-body"><div class="meta">3–4 Years · BSc Hons</div><p>Industry-focused degree with strong employer links and excellent graduate employment rates.</p><a href="https://www.leeds.ac.uk/" target="_blank" rel="noopener">Visit Site →</a></div> 
+
+        </div> 
+
+        <div class="course-card"> 
+
+          <div class="course-head"><h3>BSc Computer Science</h3><p>University of Nottingham</p></div> 
+
+          <div class="course-body"><div class="meta">3 Years · BSc Hons</div><p>The same university attended by team members James Brown and Von Goofie. Excellent research reputation.</p><a href="https://www.nottingham.ac.uk/" target="_blank" rel="noopener">Visit Site →</a></div> 
+
+        </div> 
+
+        <div class="course-card"> 
+
+          <div class="course-head"><h3>BSc Computer Science</h3><p> University of Cambridge</p></div> 
+
+          <div class="course-body"><div class="meta">3–4 Years · BSc Hons</div><p>Consistently ranked among the best in the UK for student satisfaction and graduate outcomes.</p><a href="https://www.cam.ac.uk/" target="_blank" rel="noopener">Visit Site →</a></div> 
+
+        </div> 
+
+      </div> 
+
+ 
+
+      <div class="sub-title">Short Courses &amp; Bootcamps</div> 
+
+      <div class="course-grid"> 
+
+        <div class="course-card"> 
+
+          <div class="course-head alt"><h3>Web Design Course</h3><p>Training Dragon – Nottingham</p></div> 
+
+          <div class="course-body"><div class="meta">Flexible · Certificate</div><p>Practical web design and development training covering HTML, CSS and responsive design.</p><a href="https://www.trainingdragon.co.uk/seo-course-training-nottingham" target="_blank" rel="noopener">Visit Site →</a></div> 
+
+        </div> 
+
+        <div class="course-card"> 
+
+          <div class="course-head alt"><h3>Web Development Training</h3><p>Knowledge Academy – Nottingham</p></div> 
+
+          <div class="course-body"><div class="meta">Intensive · Certificate</div><p>App and web developer training covering modern languages and frameworks, locally or online.</p><a href="https://www.theknowledgeacademy.com/locations/nottingham-nottingham/" target="_blank" rel="noopener">Visit Site →</a></div> 
+
+        </div> 
+
+        <div class="course-card"> 
+
+          <div class="course-head alt"><h3>Web Development Online</h3><p>Courses Online</p></div> 
+
+          <div class="course-body"><div class="meta">Self-Paced · Certificate</div><p>Flexible online learning covering full-stack web development — perfect for career changers.</p><a href="https://www.coursesonline.co.uk/course-listing/full-stack-web-development-learning-people/?infinity=ict2%7Enet%7Egaw%7Ecmp%7E398118100%7Eag%7E1224857355479024%7Ear%7E%7Ekw%7Ecourses%7Emt%7Eb%7Eacr%7E3209988015&msclkid=276a5f7d3d271093b0b535513405517f&utm_source=bing&utm_medium=cpc&utm_campaign=COUK+%7C+DSA&utm_term=courses&utm_content=Generic&ab=expsemantic.2"  target="_blank" rel="noopener">Visit Site →</a></div> 
+
+        </div> 
+
+        <div class="course-card"> 
+
+          <div class="course-head alt"><h3>JavaScript Training</h3><p>Web Design Academy – Nottingham</p></div> 
+
+          <div class="course-body"><div class="meta">Short Course · Certificate</div><p>JavaScript training covering fundamentals through to interactive front-end development.</p><a href="https://webdesign-training-courses.co.uk/nottingham/" target="_blank" rel="noopener">Visit Site →</a></div> 
+
+        </div> 
+
+      </div> 
+
+ 
+
+    </div> 
+
+  </section> 
+
+ 
+
+  <!-- CONTACT --> 
+
+  <section id="contact"> 
+
+    <div class="container"> 
+
+      <h2>Contact Us</h2> 
+
+      <p>Have a question about a vacancy, or want to find out more about Hot Beans Web? We'd love to hear from you.</p> 
+
+      <div class="contact-inner" style="margin-top:24px;"> 
+
+ 
+
+        <div class="contact-info"> 
+
+          <h3>Get In Touch</h3> 
+
+          <div class="cinfo"> 
+
+            <h4>Our Office</h4> 
+
+            <p>35-41 St Mary's Gate<br>Nottingham, NG1 1QN</p> 
+
+          </div> 
+
+          <div class="cinfo"> 
+
+            <h4>Phone</h4> 
+
+            <p><a href="tel:01157934556">0115 793 4556</a></p> 
+
+          </div> 
+
+          <div class="cinfo"> 
+
+            <h4>Email</h4> 
+
+            <p><a href="mailto:hotbeansweb@protonmail.com">hotbeansweb@protonmail.com</a></p> 
+
+          </div> 
+
+          <div class="cinfo"> 
+
+            <h4>Office Hours</h4> 
+
+            <p>Monday – Friday: 9:00am – 5:30pm<br>Saturday &amp; Sunday: Closed</p> 
+
+          </div> 
+
+          <div class="map-wrap"> 
+
+            <iframe 
+
+              title="Hot Beans Web location" 
+
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2403.9472938766946!2d-1.1518673!3d52.9527832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879c15ded8e81c5%3A0x6a0f79c3a11fe86!2s35-41%20St%20Mary&#39;s%20Gate%2C%20Nottingham%20NG1%201QN%2C%20UK!5e0!3m2!1sen!2suk!4v1712000000000!5m2!1sen!2suk" 
+
+              width="100%" height="260" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"> 
+
+            </iframe> 
+
+          </div> 
+
+        </div> 
+
+ 
+
+        <div class="contact-form"> 
+
+          <div class="form-box"> 
+
+            <h3>Send Us a Message</h3> 
+
+            <p>Use the form below and we'll get back to you as soon as possible.</p> 
+
+            <form id="contactForm" novalidate style="margin-top:16px;"> 
+
+              <div class="form-row"> 
+
+                <div class="form-group" id="cfg-name"> 
+
+                  <label for="cname">Your Name *</label> 
+
+                  <input type="text" id="cname" name="cname" placeholder="Jane Smith" required /> 
+
+                  <span class="err">Please enter your name.</span> 
+
+                </div> 
+
+                <div class="form-group" id="cfg-email"> 
+
+                  <label for="cemail">Email Address *</label> 
+
+                  <input type="email" id="cemail" name="cemail" placeholder="jane@example.com" required /> 
+
+                  <span class="err">Please enter a valid email address.</span> 
+
+                </div> 
+
+              </div> 
+
+              <div class="form-group" id="cfg-subject"> 
+
+                <label for="csubject">Subject *</label> 
+
+                <input type="text" id="csubject" name="csubject" placeholder="Enquiry about junior developer roles" required /> 
+
+                <span class="err">Please enter a subject.</span> 
+
+              </div> 
+
+              <div class="form-group" id="cfg-message"> 
+
+                <label for="cmessage">Message *</label> 
+
+                <textarea id="cmessage" name="cmessage" placeholder="Your message here…" required></textarea> 
+
+                <span class="err">Please enter a message (min 20 characters).</span> 
+
+              </div> 
+
+              <button type="submit" class="btn">Send Message →</button> 
+
+              <div class="form-success" id="contactSuccess">Message sent! We'll get back to you as soon as possible.</div> 
+
+            </form> 
+
+          </div> 
+
+        </div> 
+
+ 
+
+      </div> 
+
+    </div> 
+
+  </section> 
+
+ 
+
+  <!-- FOOTER --> 
+
+  <footer> 
+
+    <div class="container"> 
+
+      <div class="footer-inner"> 
+
+        <div class="footer-col"> 
+
+          <h4>Hot Beans Web</h4> 
+
+          <p>An award-winning web design agency based in Nottingham. We grow junior developers into outstanding professionals through real-world experience and dedicated mentorship.</p> 
+
+        </div> 
+
+        <div class="footer-col"> 
+
+          <h4>Navigate</h4> 
+
+          <ul> 
+
+            <li><a href="#home">Home</a></li> 
+
+            <li><a href="#about">About Us</a></li> 
+
+            <li><a href="#team">The Team</a></li> 
+
+            <li><a href="#vacancies">Vacancies</a></li> 
+
+            <li><a href="#application">Apply Now</a></li> 
+
+            <li><a href="#courses">Courses</a></li> 
+
+            <li><a href="#contact">Contact Us</a></li> 
+
+          </ul> 
+
+        </div> 
+
+       
+
+        <div class="footer-col"> 
+
+          <h4>Contact</h4> 
+
+          <ul> 
+
+            <li><a href="mailto:hotbeansweb@protonmail.com">hotbeansweb@protonmail.com</a></li> 
+
+            <li><a href="tel:01157934556">0115 793 4556</a></li> 
+
+            <li>35-41 St Mary's Gate,<br>Nottingham NG1 1QN</li> 
+
+          </ul> 
+
+        </div> 
+
+      </div> 
+
+      <div class="footer-bottom"> 
+
+        <p>© 2026 Hot Beans Web Ltd. All rights reserved.</p> 
+
+        <p>Award-winning web development · Based in Nottingham</p> 
+
+      </div> 
+
+    </div> 
+
+  </footer> 
+
+ 
+
+  <script> 
+
+    // Tabs 
+
+    document.querySelectorAll('.tab-btn').forEach(btn => { 
+
+      btn.addEventListener('click', () => { 
+
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active')); 
+
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active')); 
+
+        btn.classList.add('active'); 
+
+        document.getElementById('tab-' + btn.dataset.tab).classList.add('active'); 
+
+      }); 
+
+    }); 
+
+ 
+
+    // Form helpers 
+
+    const isEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); 
+
+    function setErr(id, show) { document.getElementById(id)?.classList.toggle('has-error', show); return show; } 
+
+ 
+
+    // Application form 
+
+    document.getElementById('appForm').addEventListener('submit', function(e) { 
+
+      e.preventDefault(); 
+
+      let err = false; 
+
+      err = setErr('fg-fn',   document.getElementById('fn').value.trim().length < 1)  || err; 
+
+      err = setErr('fg-ln',   document.getElementById('ln').value.trim().length < 1)  || err; 
+
+      err = setErr('fg-em',   !isEmail(document.getElementById('em').value.trim()))   || err; 
+
+      err = setErr('fg-role', !document.getElementById('role').value)                  || err; 
+
+      err = setErr('fg-cl',   document.getElementById('cl').value.trim().length < 50) || err; 
+
+      if (!err) { 
+
+        this.querySelectorAll('input,select,textarea,button').forEach(el => el.disabled = true); 
+
+        document.getElementById('appSuccess').style.display = 'block'; 
+
+      } 
+
+    }); 
+
+ 
+
+    // Contact form 
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) { 
+
+      e.preventDefault(); 
+
+      let err = false; 
+
+      err = setErr('cfg-name',    document.getElementById('cname').value.trim().length < 1)    || err; 
+
+      err = setErr('cfg-email',   !isEmail(document.getElementById('cemail').value.trim()))    || err; 
+
+      err = setErr('cfg-subject', document.getElementById('csubject').value.trim().length < 1) || err; 
+
+      err = setErr('cfg-message', document.getElementById('cmessage').value.trim().length < 20)|| err; 
+
+      if (!err) { 
+
+        this.querySelectorAll('input,textarea,button').forEach(el => el.disabled = true); 
+
+        document.getElementById('contactSuccess').style.display = 'block'; 
+
+      } 
+
+    }); 
+
+  </script> 
+
+</body> 
+
+</html> 
+
+ 
+
+ 
